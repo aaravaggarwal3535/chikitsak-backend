@@ -18,11 +18,8 @@ def remove_markdown(text: str) -> str:
     return text.strip()
 
 # Set your Google AI (Gemini) API key (better to set via terminal export)
-if "GOOGLE_API_KEY" not in os.environ:
-    # For demo purposes, provide a placeholder or use environment variable
-    # You need to set your actual Google API key here
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyDumIEKhCRv1QvluYxLYptvvMbvlH2SmK0"
-    print("Warning: Using placeholder API key. Please set your actual Google API key.")
+from dotenv import load_dotenv
+load_dotenv()
 
 def load_and_split_document(file_path: str):
     """
